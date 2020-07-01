@@ -1,0 +1,75 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+
+@mixin backgroundChange(){
+  transition-property: background-color;
+  transition-duration: 1s;
+}
+
+@mixin colorChange(){
+  transition-property: color,height;
+  transition-duration: 2s;
+}
+
+body{
+  background:crimson;
+  color:crimson;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:row;
+  height: 100vh;
+  #quote-box{
+    width: 500px;
+    padding:25px;
+    background:white;
+    
+    #text {
+       font-size:25px;
+       font-family: 'Raleway', sans-serif;
+       @include colorChange();
+      span{
+       margin-left:40px;
+      }     
+    }
+
+    #author{
+      text-align:end;
+      padding:5px;
+      margin-top:10px;
+      margin-bottom:10px;
+      @include colorChange();
+      
+   }
+
+    #share-box {
+      display:flex;
+      column-gap:10px;
+      flex-direction:row;
+      padding-top:5px;
+      padding-bottom:5px;
+      a{
+        color:white;
+        background:crimson;
+        padding:3px;
+        width:35px;
+        text-align:center;
+       @include backgroundChange();
+      }
+      #new-quote{
+       color:white;
+       background:crimson;
+        margin-left:auto;
+        border:none;
+        padding:8px;
+
+      @include backgroundChange();
+     }
+   }
+   
+  }  
+}
+
+
+body{
+  @include backgroundChange()
+}
